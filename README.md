@@ -15,13 +15,13 @@ Teste técnico de front-end desenvolvido com Vue 3.
 ## Decisões tomadas para este projeto
 
  1.  Gerenciamento de estado : **Pinia**
- 1.1.**Suporte Oficial do Vue 3**
-	 Embora o Vuex seja uma biblioteca popular, o Pinia é oficialmente recomendado pelo Vue.js para uso com o 			   Vue 3.
- 1.2.**Gerenciamento de Estado mais Flexível**
+ - **Suporte Oficial do Vue 3**
+	 Embora o Vuex seja uma biblioteca popular, o Pinia é oficialmente recomendado pelo Vue.js para uso com o  Vue 3.
+ - **Gerenciamento de Estado mais Flexível**
  Pinia oferece uma variedade de recursos, como getters, setters, ações e efeitos, que permitem um gerenciamento de estado mais flexível e organizado e ao mesmo tempo elimina a necessidade de definir mutações e actions separadas, simplificando a estrutura da loja.
-1.3.**Performance Melhorada:**
+- **Performance Melhorada:**
 Pinia é altamente otimizado para o Vue 3, aproveitando suas APIs reativas internas. Isso pode levar a um desempenho melhor do que o Vuex, especialmente em aplicativos de larga escala.
-1.4.**Menos Acoplamento:**
+- **Menos Acoplamento:**
 A estrutura do Pinia promove um acoplamento mais baixo entre os componentes e o estado, tornando seu código mais fácil dar manuntenção e integrar com arquitetura modular.
 
 2. Framework CSS: **Bulma**
@@ -36,9 +36,11 @@ Desenvolvi a autenticação de usuários utilizando o Firebase, e construi um ba
 **Estrutura do Firestore**
 o Firestore trabalha com documentos, um documento contém coleções e subcoleções, a estrutura do documento deste projeto foi construído da seguinte forma.
 
-1- Criei um documento chamado **users** utilizando o userID  do usuário logado como ID do documento
-2- Dentro do documento de users criei um documento chamado **projects** que armazena uma coleção de documentos
-3- Cada projeto contéum id unico e é a key para acessarmos o valores da coleção.
+- Criei um documento chamado **users** utilizando o userID  do usuário logado como ID do documento
+
+- Dentro do documento de users criei um documento chamado **projects** que armazena uma coleção de documentos
+
+- Cada projeto contéum id unico e é a key para acessarmos o valores da coleção.
 
 exemplo visual:
 
