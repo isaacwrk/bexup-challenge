@@ -43,7 +43,6 @@ export const useStoreAuth = defineStore('storeAuth',{
         const user = userCredential.user
     }).catch((error) => {
         this.error = error.message
-        console.log(error.message)
     }).finally(this.error = '');
     },
     loginUser(credentials){
@@ -54,25 +53,18 @@ export const useStoreAuth = defineStore('storeAuth',{
         })
         .catch((error) => {
             this.error = error.message
-            console.log(error.message)
         }).finally(this.error = '');
     },
     logoutUser(){
         signOut(auth).then(() => {
-            console.log('sign out')
-          }).catch((error) => {
-            console.log(error.message)
-          });
+          }).catch(() => {});
     },
     deleteAccount(){
       const user = auth.currentUser;
       deleteUser(user).then(() => {
         // User deleted.
         this.router.replace('/auth')
-      }).catch((error) => {
-        // An error ocurred
-        console.log(error)
-      });
+      }).catch(() => { });
     }
   },
 })

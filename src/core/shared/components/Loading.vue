@@ -52,9 +52,6 @@
       }
   }
   .vs-loading__dot {
-      /* width: 4px;
-      height: 4px;
-      margin-right: 3px; */
       border-radius: 999px;
       background-color: white;
       animation-name: bouncing;
