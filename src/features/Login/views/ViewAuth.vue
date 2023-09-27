@@ -16,6 +16,7 @@
           <div class="title has-text-centered">
             {{formTitle}}
           </div>
+          <Vue3Lottie :animationData="login" :height="200" :width="200" />
           <form @submit.prevent="onSubmit">
             <div class="field">
               <label class="label">Email</label>
@@ -24,11 +25,11 @@
                   v-model="credentials.email"
                   class="input" 
                   type="email" 
-                  placeholder="e.g. alexsmith@gmail.com">
+                  placeholder="alexsmith@gmail.com">
               </div>
             </div>
             <div class="field">
-              <label class="label">Password</label>
+              <label class="label">Senha</label>
               <div class="control">
                 <input 
                   v-model="credentials.password"
@@ -57,7 +58,8 @@
   <script setup>
   import { ref, reactive, computed } from 'vue'
   import { useStoreAuth } from '@/core/auth/store/userAuth.js'
-  
+  //lotties
+  import login from '@/assets/lotties/login.json'
   //Components
   import Alert from '@/core/shared/components/Alert.vue'
   
