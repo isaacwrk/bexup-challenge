@@ -4,10 +4,15 @@
             <Loading v-if="isLoading" class="is-vcentered"/>
             <div v-else class="mx-2 py-1">
           
-                <p><strong>Nome do projeto</strong>:</p>
-                {{ currentProject.projectName }}
-                <p><strong>Descrição:</strong></p>
-                {{ currentProject.description }}
+                <p>
+                  <strong>Nome do projeto</strong>:
+                  {{ currentProject.projectName }}
+                </p>
+
+                <p>
+                  <strong>Descrição:</strong> 
+                  {{currentProject.description}}
+                </p>
                 <p><strong>Atividades do projeto:</strong></p>
             
                 <ul v-for="(task, index) in currentProject.tasks" :key="index">
@@ -60,3 +65,9 @@ const storeProjects = useStoreProjects()
     },700)
     });
 </script>
+
+<style>
+p{
+  word-wrap: break-word;
+}
+</style>

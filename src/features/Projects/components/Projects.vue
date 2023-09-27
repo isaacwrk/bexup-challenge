@@ -3,10 +3,16 @@
       class="card mb-4">
       <div class="card-content ">
         <div class="content">
-            <div class="rows">
-                <p><strong>Projeto:</strong>{{ project.projectName }}</p>
-            </div>
-            <p><strong>Descrição:</strong> {{project.description}}</p>
+        <p>
+          <strong>Projeto:</strong>
+          {{ project.projectName }}
+        </p>
+            
+        <p>
+          <strong>Descrição:</strong> 
+          {{project.description}}
+        </p>
+
           <div class="columns is-mobile has-text-grey-light mt-2">
             <small class="column">Criado em {{ dateFormatted }}</small>
           </div>
@@ -15,11 +21,6 @@
       <footer class="card-footer">
         <RouterLink :to="`/projectDetails/${project.id}`" href="#" class="card-footer-item">Detalhes</RouterLink>
       </footer> 
-      <!-- <ModalDeleteProject 
-        v-if="modals.deleteProject" 
-        v-model="modals.deleteProject"
-        :projectId="project.id"
-      /> -->
     </div>
   </template>
   
@@ -42,7 +43,7 @@
   </script>
 
 <style>
-.is-maxheight-40{
-    max-height: 10px;
+p {
+  word-wrap: break-word;
 }
 </style>
