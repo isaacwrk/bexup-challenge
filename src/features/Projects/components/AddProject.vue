@@ -38,15 +38,14 @@
                 </li>
             </ul>
         </div>
-    
+
         <div class="field">
             <input type="submit" class="button is-primary">
             <input type="button" class="button is-danger ml-2" value="Cancelar" @click="dispose">
         </div>
-    
-        </form>
-    
-        </div>
+    </form>    
+    </div>
+
     </div>
     </div>
 </template>
@@ -88,12 +87,17 @@ const dispose =  () =>{
 }
 
 const handleSaveProject = () => {
-    storeProjects.addNewProject(
+    if(!projectContent.projectName || !projectContent.description){
+        alert('Nome do projeto e descrição são obrigatórios!')
+    }else{
+        storeProjects.addNewProject(
         projectContent.projectName, 
         projectContent.description, 
         projectContent.tasks
         )
     dispose()
+    }
+    
 }
 
 onClickOutside(modalCardRef, dispose)

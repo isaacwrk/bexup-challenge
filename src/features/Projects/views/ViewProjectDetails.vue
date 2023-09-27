@@ -3,15 +3,17 @@
         <div class="card-content my-2">
             <Loading v-if="isLoading" class="is-vcentered"/>
             <div v-else class="mx-2 py-1">
-                <p><strong>Nome do Projeto</strong>:</p>
+          
+                <p><strong>Nome do projeto</strong>:</p>
                 {{ currentProject.projectName }}
                 <p><strong>Descrição:</strong></p>
                 {{ currentProject.description }}
-                <p><strong>Atividades do Projeto:</strong></p>
+                <p><strong>Atividades do projeto:</strong></p>
             
                 <ul v-for="(task, index) in currentProject.tasks" :key="index">
                     <li>• {{ task }}</li>
                 </ul>
+              
             </div>
         </div>
         <footer class="card-footer">
@@ -58,9 +60,3 @@ const storeProjects = useStoreProjects()
     },700)
     });
 </script>
-
-<style>
-.body{
-    gap:1rem;
-}
-</style>

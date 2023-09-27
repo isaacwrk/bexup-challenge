@@ -33,23 +33,6 @@
               Logout {{ useAuth.user.email }}
             </button>
           </div>
-          <div class="navbar-end " >
-            <div class="navbar-item "  v-if="useAuth.user.id">
-              <RouterLink 
-                @click="showMobileNav = false"
-                to="/"
-                class="navbar-item  has-text-light ">
-                Projects
-              </RouterLink>
-            
-              <RouterLink 
-                @click="showMobileNav = false"
-                to="/stats"
-                class="navbar-item  has-text-light">
-                Stats
-              </RouterLink>
-            </div>
-          </div>
         </div>
       </div>
     </nav>

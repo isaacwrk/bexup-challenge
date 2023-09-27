@@ -8,7 +8,6 @@
         <input type="text" name="name" id="the_name" class="input" v-model="projectContent.projectName">
     </div>
 
- 
     <div class="field">
         <label class="label" for="the_message">Descrição</label>
         <textarea name="message" id="the_message" class="textarea" v-model="projectContent.description"></textarea>
@@ -23,9 +22,9 @@
         </div>
     </div>
 
-    <div class="tasks content has-background-light mx-2 mt-2">
+    <div v-if="projectContent.tasks.length > 0" class="tasks content has-background-light mx-2 mt-2">
         <ul>
-            <li v-for="(task, index) in projectContent.tasks" :key="index">
+            <li v-for="(task, index) in projectContent.tasks" :key="index" class="my-2">
                 <span>{{ task }}</span>
                 <i
                 class="fas fa-trash-alt ml-4"
@@ -37,7 +36,8 @@
     </div>
 
     <div class="field">
-        <input type="submit" class="button is-primary" >
+        <RouterLink :to="`/`" class="button is-danger">Voltar</RouterLink>
+        <input type="submit" class="button is-primary ml-3">
     </div>
 
 </form>
@@ -74,12 +74,17 @@ const removeTask = (index) => {
 }
 
 const handleSaveProject = () => {
-    storeProjects.updateProject(
+    if(!projectContent.value.projectName || !projectContent.value.description){
+        alert('Nome do projeto e descrição são obrigatórios!')
+    }else{
+        storeProjects.updateProject(
         route.params.id, 
         projectContent.value.projectName, 
         projectContent.value.description, 
         projectContent.value.tasks
         )
-    router.push('/')
+    router.replace(`/projectDetails/${route.params.id}`)
+    }
+    
 }
 </script>
